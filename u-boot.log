@@ -1,0 +1,175 @@
+G12A:BL:0253b8:61aa2d;FEAT:F0F821B0:12020;POC:F;RCY:0;EMMC:0;READ:0;0.0;0.0
+bl2_stage_init 0x01
+bl2_stage_init 0x81
+hw id: 0x0000 - pwm id 0x01
+bl2_stage_init 0xc1
+bl2_stage_init 0x02
+
+L0:e000000f
+L1:00000703
+L2:00008067
+L3:04000000
+S1:00000000
+B2:00012020
+B1:f0f821b0
+
+TE: 242639
+
+BL2 Built : 17:23:03, Apr 13 2019. g12a g5b4ffbb - jenkins@walle02-sh
+
+Board ID = 4
+Set cpu clk to 24M
+Set clk81 to 24M
+CPU clk: 1200 MHz
+Set clk81 to 166.6M
+eMMC boot @ 0
+sw8 s
+DDR driver_vesion: LPDDR4_PHY_V_0_1_12 build time: Apr 13 2019 17:22:59
+board id: 4
+Load FIP HDR from eMMC, src: 0x00010200, des: 0xfffd0000, size: 0x00004000, part: 0
+fw parse done
+Load ddrfw from eMMC, src: 0x00060200, des: 0xfffd0000, size: 0x0000c000, part: 0
+Load ddrfw from eMMC, src: 0x00038200, des: 0xfffd0000, size: 0x00004000, part: 0
+PIEI prepare done
+00000000
+emmc switch 1 ok
+ddr saved addr:00016000
+Load ddr parameter from eMMC, src: 0x02c00000, des: 0xfffd0000, size: 0x00000270, part: 0
+00000000
+emmc switch 0 ok
+Cfg max: 5, cur: 1. Board id: 255. Force loop cfg
+DDR3 probe
+ddr clk to 912MHz
+Load ddrfw from eMMC, src: 0x0002c200, des: 0xfffd0000, size: 0x0000c000, part: 0
+
+dmc_version 0000
+Check phy result
+INFO : End of initialization
+INFO : End of read enable training
+INFO : End of fine write leveling
+INFO : End of MPR read delay center optimization
+INFO : End of Write leveling coarse delay
+INFO : End of write delay center optimization
+INFO : End of read delay center optimization
+INFO : End of max read latency training
+INFO : Training has run successfully!
+1D training succeed
+auto size-- 65535DDR cs0 size: 512MB
+DDR cs1 size: 0MB
+DMC_DDR_CTRL: 0001002aDDR size: 512MB
+cs0 DataBus test pass
+cs0 AddrBus test pass
+
+non-sec scramble use zero key
+ddr scramble enabled
+
+100bdlr_step_size ps== 498
+result report
+boot times 0Enable ddr reg access
+00000000
+emmc switch 3 ok
+Authentication key not yet programmed
+get rpmb counter error 0x00000007
+00000000
+emmc switch 0 ok
+Load FIP HDR from eMMC, src: 0x00010200, des: 0x01700000, size: 0x00004000, part: 0
+Load BL3X from eMMC, src: 0x0006c200, des: 0x0175c000, size: 0x000d3a00, part: 0
+0.0;0.0;M3 CHK:0;cm4_sp_mode 0
+
+MVN_1=0x00000000
+
+MVN_2=0x00000000
+
+[Image: g12a_v1.1.3391-7171d67 2019-03-29 18:23:46 jenkins@walle02-sh]
+
+OPS=0x10
+
+ring efuse init
+
+28 0b 10 00 01 2a 2e 00 00 0d 35 34 58 42 4b 50 
+
+[0.016949 Inits done]
+
+secure task start!
+high task start!
+low task start!
+run into bl31
+NOTICE:  BL31: v1.3(release):b743379
+NOTICE:  BL31: Built : 04:53:41, Apr 11 2019
+NOTICE:  BL31: G12A secure boot!
+NOTICE:  BL31: BL33 decompress pass
+ERROR:   Error initializing runtime service opteed_fast
+
+
+U-Boot 2015.01 (Mar 17 2021 - 20:23:35 - v1.0-19-ga722ed4338)
+
+DRAM:  512 MiB
+Relocation Offset is: 16e42000
+spi_post_bind(spifc): req_seq = 0
+register usb cfg[0][1] = 0000000017f314b0
+MMC:   aml_priv->desc_buf = 0x0000000013e42de0
+aml_priv->desc_buf = 0x0000000013e45120
+SDIO Port B: 0, SDIO Port C: 1
+co-phase 0x3, tx-dly 0, clock 400000
+co-phase 0x3, tx-dly 0, clock 400000
+co-phase 0x3, tx-dly 0, clock 400000
+emmc/sd response timeout, cmd8, status=0x1ff2800
+emmc/sd response timeout, cmd55, status=0x1ff2800
+co-phase 0x3, tx-dly 0, clock 400000
+co-phase 0x3, tx-dly 0, clock 52000000
+aml_sd_retry_refix[983]:delay = 0x0,gadjust =0x22000
+meson-mmc: emmc: [ 0 -- 10 ] is ok
+meson-mmc: emmc: [ 11 ] is nok
+meson-mmc: emmc: [ 12 -- 18 ] is ok
+meson-mmc: emmc: aml_sd_retry_refix[1023]:delay1 = 0x0,delay2 = 0x0, gadjust =0x22000
+meson-mmc: emmc: aml_sd_retry_refix [1026]: adj_delay = 2
+[mmc_startup] mmc refix success
+init_part() 297: PART_TYPE_AML
+[mmc_init] mmc init success
+aml log : R2048 check pass!
+      Amlogic multi-dtb tool
+      Single dtb detected
+start dts,buffer=0000000013e47990,dt_addr=0000000013e47990
+get_partition_from_dts() 71: ret 0
+      Amlogic multi-dtb tool
+      Single dtb detected
+parts: 13
+00:      logo	0000000000800000 1
+01:       dto	0000000000800000 1
+02:    dtbo_a	0000000000800000 1
+03:    dtbo_b	0000000000800000 1
+04:  vbmeta_a	0000000000100000 1
+05:  vbmeta_b	0000000000100000 1
+06:    boot_a	0000000001000000 1
+set has_boot_slot = 1
+07:    boot_b	0000000001000000 1
+08:  system_a	000000002040b000 1
+09:  system_b	000000002040b000 1
+10:      misc	0000000000800000 1
+11:  settings	0000000010000000 1
+12:      data	ffffffffffffffff 4
+init_part() 297: PART_TYPE_AML
+eMMC/TSD partition table have been checked OK!
+crc32_s:0x1577dad == storage crc_pattern:0x1577dad!!!
+crc32_s:0xee152b83 == storage crc_pattern:0xee152b83!!!
+crc32_s:0x79f50f07 == storage crc_pattern:0x79f50f07!!!
+sd_emmc_regs->gcfg is 4792
+sd_emmc_regs->gclock is 10000353
+sd_emmc_regs->gadjust is 22000
+sd_emmc_regs->gdelay is 0
+sd_emmc_regs->gintf3 is 0
+co-phase 0x3, tx-dly 0, clock 52000000
+co-phase 0x3, tx-dly 0, clock 198000000
+aml_sd_retry_refix[983]:delay = 0x0,gadjust =0x42000
+meson-mmc: emmc: [ 0 ] is ok
+meson-mmc: emmc: [ 1 ] is nok
+meson-mmc: emmc: [ 2 -- 4 ] is ok
+meson-mmc: emmc: aml_sd_retry_refix[1023]:delay1 = 0x0,delay2 = 0x0, gadjust =0x42000
+meson-mmc: emmc: aml_sd_retry_refix [1026]: adj_delay = 4
+mmc env offset: 0x7400000 
+aml log : R2048 check pass!
+aml log : R-2048 check pass!
+aml log : R2048 check pass!
+aml log : R2048 check pass!
+aml log : R2048 check pass!
+uboot time: 5469920 us
