@@ -84,4 +84,7 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 467           0x1D3           xz compressed data
 ```
 
+https://github.com/spsgsb/uboot/tree/bf8ab892a2c52e3fedc4dfbc569ebc1003aece75/board/amlogic/superbird_production
+https://github.com/forkbabu/Spotify/tree/74290449d2482a08b21d570e245c9402c7624871/sources/com/spotify/music/superbird
+https://dn.odroid.com/S905/DataSheet/S905_Public_Datasheet_V1.1.4.pdf
 
