@@ -19,6 +19,8 @@ https://drive.google.com/file/d/1XgEtHngd14Z3Vhj1zarceuxAH7cjQDQ_/view?usp=shari
 
 Found SWU update link from sniffing bluetooth connection.
 
+The .xdpatch files use VCDIFF (RFC 3284) compression. You can use xdelta3 or other VCDIFF tools to manapulate them. But the format is targeted for binary files and does not generate human readable output.
+
 ```
 binwalk 5.2.6.swu
 
