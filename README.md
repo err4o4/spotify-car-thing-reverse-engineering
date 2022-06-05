@@ -10,7 +10,7 @@ EMMC: THGBMNG5D1LBAIL
 ## U-boot
 https://github.com/err4o4/car-thing-reverse-engineering/blob/main/u-boot.log
 
-There are 2 UARTs. One shows complete mess due to looked bootloader (maybe I'm wrong) and another shows u-boot log. As far as I understand we need to enter recovery or disable secure boot. Tried different buttons/combination/shorted some testpads - no luck.
+There are 2 UARTs. One shows complete mess due to locked bootloader (maybe I'm wrong) and another shows u-boot log. As far as I understand we need to enter recovery or disable secure boot. Tried different buttons/combination/shorted some testpads - no luck.
 
 ## Bluetooth 
 
