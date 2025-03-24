@@ -1,0 +1,46 @@
+#!/bin/sh
+#
+# Start the network....
+#
+
+# Debian ifupdown needs the /run/network lock directory
+mkdir -p /run/network
+
+case "$1" in
+  start)
+    if [[ $( cat /proc/cmdline | xargs -n1 | grep network= ) == "network=eth" ]]
+    then
+	    printf "Starting usb host: "
+      echo host > /sys/class/usb_role/ffe09000.usb-role-switch/role
+      [ $? = 0 ] && echo "OK" || echo "FAIL"
+      sleep 10s
+      if [ ! -z "$( ip address | grep eth0 )" ]
+      then
+	      printf "Starting ethernet: "
+        ip link set eth0 up
+        sleep 2s
+        udhcpc
+        [ $? = 0 ] && echo "OK" || echo "FAIL"
+      fi
+    fi
+	;;
+  stop)
+	  printf "Stopping network: "
+    if [ ! -z "$( ip address | grep eth0 )" ]
+    then
+      ip link set eth0 down
+    fi
+    killall udhcpc
+    ip link set lo down
+    [ $? = 0 ] && echo "OK" || echo "FAIL"
+	;;
+  restart|reload)
+	"$0" stop
+	"$0" start
+	;;
+  *)
+	echo "Usage: $0 {start|stop|restart}"
+	exit 1
+esac
+
+exit $?

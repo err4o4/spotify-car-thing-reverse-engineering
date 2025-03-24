@@ -1,0 +1,47 @@
+#!/bin/sh
+#
+# btattach
+#
+
+DAEMON="btattach"
+PIDFILE="/var/run/$DAEMON.pid"
+
+BTATTACH_ARGS="-P bcm -B /dev/ttyAML6"
+
+case "$1" in
+  start)
+    printf 'Starting %s: ' "$DAEMON"
+    /usr/bin/gpioset 0 82=1
+    sleep 1
+    start-stop-daemon -S -q -b -p "$PIDFILE" -x "/usr/bin/$DAEMON" \
+            -- $BTATTACH_ARGS
+    status=$?
+    if [ "$status" -eq 0 ]; then
+      echo "OK"
+    else
+      echo "FAIL"
+    fi
+    ;;
+  stop)
+    printf 'Stopping %s: ' "$DAEMON"
+    start-stop-daemon -K -q -p "$PIDFILE"
+    status=$?
+    /usr/bin/gpioset 0 82=0
+    if [ "$status" -eq 0 ]; then
+      rm -f "$PIDFILE"
+      echo "OK"
+    else
+      echo "FAIL"
+    fi
+    ;;
+  restart|reload)
+    "$0" stop
+    sleep 1
+    "$0" start
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart}"
+    exit 1
+esac
+
+exit $?

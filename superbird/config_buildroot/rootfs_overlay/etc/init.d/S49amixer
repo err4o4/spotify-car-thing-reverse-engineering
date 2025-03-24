@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# Switch default microphone to PDM
+#
+
+case "$1" in
+  start)
+      printf "Switching default microphone to PDM: "
+      amixer cset name='TODDR_A SRC SEL' 'IN 4'
+      [ $? = 0 ] && echo "OK" || echo "FAIL"
+    ;;
+  stop)
+    ;;
+  restart|reload)
+    "$0" stop
+    "$0" start
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart}"
+    exit 1
+esac
+
+exit $?

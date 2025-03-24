@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Start scroll2tab on boot
+case "$1" in
+  start)
+    echo "Starting scroll2tab..."
+    # enable this if loaded as module in buildroot
+    #modprobe uinput
+    /usr/bin/scroll2tab &
+    ;;
+  stop)
+    killall scroll2tab
+    ;;
+  restart)
+    $0 stop
+    $0 start
+    ;;
+esac

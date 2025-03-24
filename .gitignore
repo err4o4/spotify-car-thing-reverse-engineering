@@ -1,0 +1,30 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Spotlight
+.Spotlight-V100
+
+# Trash
+.Trashes
+
+# macOS metadata
+*.AppleDouble
+*.VolumeIcon.icns
+
+# macOS Folder settings
+Desktop.ini
+.fseventsd
+.TemporaryItems
+.apdisk
+
+superbird/buildroot
+superbird/6.6.43_20240801.tar.gz
+esp32-wifi-ncm/esp-idf
